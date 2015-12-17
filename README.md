@@ -5,5 +5,5 @@
 * @CacheEvict
 
 ###环境依赖
-redis
-maven
+- redis
+- maven
