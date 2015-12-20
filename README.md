@@ -6,7 +6,10 @@
 * @CachePut
 * @CacheEvict
 
-value参数可指定多个库，key参数指定主键，返回值为保存的值。
+####参数说明
+value参数可指定多个库
+key参数指定主键
+返回值为保存的值。
 condition是缓存条件限定
 
 ###关键配置
@@ -37,6 +40,24 @@ condition是缓存条件限定
 ```
 
 ###方式1：整合redis
+
+maven依赖
+```
+<!-- redis cache -->
+<dependency>
+	<groupId>redis.clients</groupId>
+	<artifactId>jedis</artifactId>
+	<version>2.5.2</version>
+</dependency>
+
+<dependency>
+	<groupId>org.springframework.data</groupId>
+	<artifactId>spring-data-redis</artifactId>
+	<version>1.3.4.RELEASE</version>
+</dependency>
+```
+
+spring配置
 ```xml
 <!-- 新版本属性值 -->
 <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
@@ -67,6 +88,15 @@ condition是缓存条件限定
 基于 java.util.concurrent.ConcurrentHashMap 的一个内存缓存实现方案
 
 ###方式3：整合ehcache
+maven依赖
+```
+<!-- ehcache -->
+<dependency>
+	<groupId>net.sf.ehcache</groupId>
+	<artifactId>ehcache-core</artifactId>
+	<version>2.6.6</version>
+</dependency>
+```
 配置cacheManage
 ```xml
 <!-- 方式3：使用ehcache -->
