@@ -26,4 +26,6 @@ public interface UserService {
 
     void reload();
 
+    User getByNameFromDefault(String name);
+
 }

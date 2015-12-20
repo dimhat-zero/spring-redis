@@ -36,6 +36,14 @@ public class UserServiceImpl implements UserService {
         return user;
     }
 
+    @Override
+    @Cacheable(value = "user2")
+    public User getByNameFromDefault(String name) {
+        User user = getFromDb(name);
+        logger.info(String.format("execute getByNameFromDefault(%s)", name));
+        return user;
+    }
+
     /** 
      * 一定执行方法，并更新到缓存中
      */

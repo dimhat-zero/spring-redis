@@ -44,6 +44,18 @@ public class UserServiceTest {
     }
 
     @Test
+    public void testGetByNameDiff() {
+        User user1 = userService.getByName("admin");//not in cache
+        logger.info("user1:" + user1);
+        User user2 = userService.getByName("admin");// in cache
+        logger.info("user2:" + user2);
+        User user3 = userService.getByNameFromDefault("admin");//not in cache , it's different with cache named user
+        logger.info("user3:" + user3);
+        User user4 = userService.getByNameFromDefault("admin");// in cache
+        logger.info("user4:" + user4);
+    }
+
+    @Test
     public void testGetByName2() {
         User user1 = userService.getByName2("admin");
         logger.info("user1:" + user1);
