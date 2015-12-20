@@ -7,10 +7,10 @@
 * @CacheEvict
 
 ####参数说明
-value参数可指定多个库
-key参数指定主键
-返回值为保存的值。
-condition是缓存条件限定
+* value参数可指定多个库
+* key参数指定主键
+* 返回值为保存的值。
+* condition是缓存条件限定
 
 ###关键配置
 配置cacheManage，使用CacheFactoryBean的可用多个name会分开缓存
@@ -42,7 +42,7 @@ condition是缓存条件限定
 ###方式1：整合redis
 
 maven依赖
-```
+```xml
 <!-- redis cache -->
 <dependency>
 	<groupId>redis.clients</groupId>
@@ -89,7 +89,7 @@ spring配置
 
 ###方式3：整合ehcache
 maven依赖
-```
+```xml
 <!-- ehcache -->
 <dependency>
 	<groupId>net.sf.ehcache</groupId>
@@ -109,7 +109,7 @@ maven依赖
 </bean>  
 ```
 ehcache.xml
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>  
 <ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">  
      
